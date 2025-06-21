@@ -1,62 +1,47 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Code, 
-  User, 
-  Briefcase, 
-  Mail, 
-  Github, 
-  Linkedin, 
-  Instagram,
-  FileText,
-  ArrowRight,
-  ArrowDown
-} from "lucide-react";
+import { Code, User, Briefcase, Mail, Github, Linkedin, Instagram, FileText, ArrowRight, ArrowDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
+      description: "Thank you for reaching out. I'll get back to you soon!"
     });
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
   };
-
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold gradient-text">SHAFANA N P</h1>
             <div className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Skills', 'Services', 'Experience', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-700 hover:text-primary transition-colors"
-                >
+              {['Home', 'About', 'Skills', 'Services', 'Experience', 'Contact'].map(item => <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-gray-700 hover:text-primary transition-colors">
                   {item}
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
         </div>
@@ -69,14 +54,10 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8 float-animation">
               <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-primary to-accent p-1 pulse-glow">
-                <img
-                  src="/lovable-uploads/36012dcd-ead9-4966-bd14-ffd0e0d20244.png"
-                  alt="SHAFANA N P"
-                  className="w-full h-full rounded-full object-cover"
-                />
+                <img src="/lovable-uploads/36012dcd-ead9-4966-bd14-ffd0e0d20244.png" alt="SHAFANA N P" className="w-full h-full rounded-full object-cover" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+            <h1 className="text-5xl md:text-7xl mb-6 gradient-text text-orange-500 font-bold">
               SHAFANA N P
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-4">
@@ -86,18 +67,10 @@ const Index = () => {
               B.Tech IT Student at GEC Palakkad, passionate about coding, community service, and creating impactful tech solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                onClick={() => scrollToSection('about')}
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3"
-              >
+              <Button size="lg" onClick={() => scrollToSection('about')} className="bg-primary hover:bg-primary/90 text-white px-8 py-3">
                 Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3"
-              >
+              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3">
                 <FileText className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
@@ -186,11 +159,9 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-3">
-                    {['Python', 'C Programming', 'HTML/CSS', 'JavaScript', 'Git/GitHub', 'Figma'].map((skill) => (
-                      <Badge key={skill} variant="secondary" className="justify-center py-2">
+                    {['Python', 'C Programming', 'HTML/CSS', 'JavaScript', 'Git/GitHub', 'Figma'].map(skill => <Badge key={skill} variant="secondary" className="justify-center py-2">
                         {skill}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
               </Card>
@@ -203,11 +174,9 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-3">
-                    {['Public Speaking', 'Event Coordination', 'Canva Design', 'Team Leadership', 'Project Management', 'Communication'].map((skill) => (
-                      <Badge key={skill} variant="secondary" className="justify-center py-2">
+                    {['Public Speaking', 'Event Coordination', 'Canva Design', 'Team Leadership', 'Project Management', 'Communication'].map(skill => <Badge key={skill} variant="secondary" className="justify-center py-2">
                         {skill}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
               </Card>
@@ -225,24 +194,19 @@ const Index = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Web Development",
-                  description: "Responsive websites with HTML, CSS, and JavaScript",
-                  icon: Code
-                },
-                {
-                  title: "Presentation Design",
-                  description: "Professional presentations using Canva",
-                  icon: FileText
-                },
-                {
-                  title: "Poster Design",
-                  description: "Eye-catching posters and graphics using Figma",
-                  icon: User
-                }
-              ].map((service, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all hover:-translate-y-2">
+              {[{
+              title: "Web Development",
+              description: "Responsive websites with HTML, CSS, and JavaScript",
+              icon: Code
+            }, {
+              title: "Presentation Design",
+              description: "Professional presentations using Canva",
+              icon: FileText
+            }, {
+              title: "Poster Design",
+              description: "Eye-catching posters and graphics using Figma",
+              icon: User
+            }].map((service, index) => <Card key={index} className="hover:shadow-lg transition-all hover:-translate-y-2">
                   <CardContent className="p-6 text-center">
                     <service.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -251,8 +215,7 @@ const Index = () => {
                       Learn More
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -267,21 +230,17 @@ const Index = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
             </div>
             <div className="space-y-8">
-              {[
-                {
-                  title: "IEEE Volunteer",
-                  period: "2022 - Present",
-                  description: "Contributing to tech workshops, paper publications, and event organization. Actively involved in promoting technical education and innovation among students.",
-                  icon: Briefcase
-                },
-                {
-                  title: "NSS Volunteer",
-                  period: "2022 - Present", 
-                  description: "Organizing social awareness camps and public initiatives. Focused on community service and making a positive impact through technology and education.",
-                  icon: User
-                }
-              ].map((exp, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+              {[{
+              title: "IEEE Volunteer",
+              period: "2022 - Present",
+              description: "Contributing to tech workshops, paper publications, and event organization. Actively involved in promoting technical education and innovation among students.",
+              icon: Briefcase
+            }, {
+              title: "NSS Volunteer",
+              period: "2022 - Present",
+              description: "Organizing social awareness camps and public initiatives. Focused on community service and making a positive impact through technology and education.",
+              icon: User
+            }].map((exp, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="bg-primary/10 p-3 rounded-full">
@@ -296,8 +255,7 @@ const Index = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -348,30 +306,22 @@ const Index = () => {
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <Input
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                      />
+                      <Input placeholder="Your Name" value={formData.name} onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} required />
                     </div>
                     <div>
-                      <Input
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                      />
+                      <Input type="email" placeholder="Your Email" value={formData.email} onChange={e => setFormData({
+                      ...formData,
+                      email: e.target.value
+                    })} required />
                     </div>
                     <div>
-                      <Textarea
-                        placeholder="Your Message"
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        required
-                      />
+                      <Textarea placeholder="Your Message" rows={4} value={formData.message} onChange={e => setFormData({
+                      ...formData,
+                      message: e.target.value
+                    })} required />
                     </div>
                     <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
                       Send Message
@@ -393,8 +343,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
